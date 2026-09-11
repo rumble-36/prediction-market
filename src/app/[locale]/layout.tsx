@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
+import { Analytics } from '@vercel/analytics/next'
 import { NextIntlClientProvider } from 'next-intl'
 import { cacheTag } from 'next/cache'
 import { notFound } from 'next/navigation'
@@ -194,6 +195,7 @@ function LocaleBody({
               <PwaInstallStateSync />
               {children}
               <CustomJavascriptCode locale={locale} codes={runtimeTheme.site.customJavascriptCodes} />
+              <Analytics />
             </AppProviders>
           </NextIntlClientProvider>
         </SiteIdentityProvider>
